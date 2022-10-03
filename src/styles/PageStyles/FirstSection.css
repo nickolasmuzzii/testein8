@@ -1,0 +1,34 @@
+@font-face {
+    font-family: "Roboto-Light";
+    src: url('../../../Fonts/Roboto-Light_0.ttf');
+  }
+.first-section-container{
+    width:100%;
+    height:100vh;
+    background-image: url('../../Images/index-image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: static
+}
+.text-container{
+    position: relative;
+    top:30%;
+    left: 23%
+}
+.title1{
+    font-family: 'Roboto-Light';
+    color: #FFFF;
+    font-weight: 50;
+    text-align: left;
+    margin: 0;
+    font-size: 100px;
+}
+.title2{
+    font-family: 'Roboto-Light';
+    color: #FFFF;
+    font-size: 43px;
+    font-weight: 100;
+    margin: 0;
+    text-align: left;
+}

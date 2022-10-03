@@ -1,0 +1,13 @@
+.form-grid{
+    width: 100%;
+    height: 100%;
+    background-color: transparent
+}
+ 
+.form-input{
+    width: 100%;
+}
+.form-input label{
+    color: #fff
+}
+
