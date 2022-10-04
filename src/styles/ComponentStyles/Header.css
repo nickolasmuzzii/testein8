@@ -17,6 +17,7 @@
 .logo {
     width: 10%;
     height: 50px;
+    cursor: pointer;
 }
 
 .links {
@@ -34,4 +35,14 @@
 .icons {
     font-size: 13px !important;
     margin-top: 3px;
+}
+.btn-header{
+    background-color: transparent;
+    border: none;
+    color: #ffff;
+    cursor: pointer;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    outline: none;
 }

@@ -1,5 +1,5 @@
 @font-face {
-    font-family: "Roboto-Light";
+    font-family: "RobotoLight";
     src: url('../../../Fonts/Roboto-Light_0.ttf');
   }
 .register-section-container{
@@ -19,4 +19,7 @@
     flex-direction: column;
     justify-content: space-between;
 
+}
+h1{
+    font-family:"RobotoLight" ;
 }

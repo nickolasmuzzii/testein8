@@ -1,8 +1,6 @@
 import React from 'react'
-import { Formik, FormikValues } from 'formik'
+import { Field, Formik, FormikValues } from 'formik'
 import Grid from '@mui/material/Grid'
-import TextField from '@mui/material/TextField';
-import InputMask from './InputMask';
 import '../styles/ComponentStyles/RegisterForm.css'
 import Input from './Input';
 type RegisterFormProps = {
@@ -11,10 +9,11 @@ type RegisterFormProps = {
     submitForm?: void
 }
 export const standarValues = {
- 'nome' : '',
- 'email': '',
- 'nascimento' : '',
- 'telefone': '',
+    "nome": 'nomeass',
+    "email": '',
+    "nascimento": '',
+    "telefone": '',
+    "teste": ''
 }
 const RegisterForm = ({
     className,
@@ -23,53 +22,65 @@ const RegisterForm = ({
 
 }: RegisterFormProps) => {
     return (
-        <div className="form-grid">
+        <div className={className || "form-grid"}>
             <Formik
-                initialValues={initialValues || standarValues}
+                initialValues={standarValues}
                 onSubmit={(values: FormikValues) => console.log(values)}
             >
-                {({ handleSubmit, handleChange, values }) => (
-                    <Grid container spacing={2}>
+                {({ handleChange, values }) => (
+                    <Grid container spacing={2} className="form-grid">
                         <Grid item xs={12}>
-                        <TextField 
-                            className="form-input"
-                            variant="standard"
-                            name="nome"
-                            label="Nome"
-                        />
+                            <label htmlFor='nome' className="labels"> Nome:</label>
+                            <Field
+                                className="form-input"
+                                variant="standard"
+                                name="nome"
+                                label="Nome"
+                                id="nome"
+                            />
                         </Grid>
                         <Grid item xs={12}>
-                        <TextField 
-                            classes={{root: "form-input"}}
-                            variant="standard"
-                            name="email"
-                            label="E-mail"
-                        />
+                            <label htmlFor='nome' className="labels"> E-mail:</label>
+                            <Field
+                                className="form-input"
+                                variant="standard"
+                                name="email"
+                                id="email"
+                                label="E-mail"
+                            />
                         </Grid>
-                        
                         <Grid item xs={12}>
-                        <InputMask 
-                            className="form-input"
-                            mask="00/00/0000"
-                            variant="standard"
-                            label="Nascimento"
-                            name="nascimento"
-                        />
+                            <label htmlFor='nascimento' className="labels"> Nascimento:</label>
+                            <Input
+                                className="form-input"
+                                mask="99/99/9999"
+                                onChange={(e: any) => handleChange(e)}
+                                name="nascimento"
+                                id="nascimento"
+                            />
                         </Grid>
-                        
+
                         <Grid item xs={12}>
-                        <InputMask 
-                            className="form-input"
-                            mask="(00) 0 0000-0000"
-                            variant="standard"
-                            name="telefone"
-                            label="Telefone"
-                        />
+                            <label htmlFor='telefone' className="labels"> Telefone:</label>
+                            <Input
+                                className="form-input"
+                                mask="(99) 9 9999-9999"
+                                name="telefone"
+                                id="telefone"
+                                onChange={(e: any) => handleChange(e)}
+                            />
                         </Grid>
-                        <Input/>
-                        
+                        <div className="btn-div">
+                            <button
+                                onClick={() => console.log(values)}
+                                className="button-register"
+                            >
+                                Cadastrar
+                            </button>
+                        </div>
                     </Grid>
-                            )}
+                )}
+
             </Formik>
 
         </div>

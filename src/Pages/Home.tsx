@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import Header from '../Components/Header';
+import Footer from '../components/AboutMe';
+import Header from '../components/Header';
 import FirstSection from './FirstSection';
+import ListSection from './ListSection';
 import RegisterSection from './RegisterSection';
 
 type HomeProps = {
@@ -13,11 +15,13 @@ const Home = ({className}: HomeProps) =>{
        <div className={className}>
         <FirstSection/>
         <RegisterSection/>
+        <ListSection/>
+        <Footer/>
        </div> 
     )
 }
 
 export default styled(Home)`
-    width: 100%;
+    width: 100vw;
     height: 100%;
 `
