@@ -5,7 +5,7 @@
 .first-section-container{
     width:100%;
     height:100vh;
-    background-image: url('../../Images/index-image.jpg');
+    background-image: url('../../images/index-image.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

@@ -1,31 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Field } from 'formik'
-import { type } from 'os';
-
+import InputMask from 'react-input-mask'
 type InputProps = {
     className?: string;
     name?: string;
     value?: any
     type?: string
     placeholder?: string
+    mask: string
+    onChange?: any
+    id?: string
 }
-
 const Input = ({
     className,
     name,
     value,
     type,
     placeholder,
+    mask,
+    onChange,
+    id
 
-}:InputProps) => {
+}: InputProps) => {
+    const [inputValue, setinputValue] = useState<any>()
+    const changeInput = (e: any) => {
+        setinputValue(e?.target?.value)
+        return onChange(e)
+    }
     return (
-        <Field
-         className={className}
-         type={type}
+        <InputMask className={className}
+         id={id}
          name={name}
-         value={value}
-         placeholder={placeholder}
-        />
+         mask={mask}
+         onChange={(e) => changeInput(e)}
+         value={inputValue} />
     )
 }
 

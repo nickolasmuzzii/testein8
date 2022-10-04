@@ -18,17 +18,22 @@ html{
   width: 100%;
   height: auto;
   min-height: 100%;
+  overflow-x: none;
+
 }
 body{
   width: 100%;
   height: auto;
   min-height:100%;
+  overflow-x: none;
 }
 
 .App {
   text-align: center;
   width: 100%;
   height: auto;
+  overflow-x: none;
+
 }
 
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import RegisterForm from '../Components/RegisterForm';
+import RegisterForm from '../components/RegisterForm';
 import '../styles/PageStyles/RegisterSection.css'
 
 type RegisterSectionProps = {

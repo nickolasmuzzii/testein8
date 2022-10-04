@@ -1,0 +1,31 @@
+@font-face {
+    font-family: "RobotoLight";
+    src: url('../../../Fonts/Roboto-Light_0.ttf');
+  }
+.list-section{
+    width:100%;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #29abe34e;
+}
+h1{
+    font-family:"RobotoLight" ;
+    color: #29aae3
+}
+.container-list{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.btn-top{
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+}
