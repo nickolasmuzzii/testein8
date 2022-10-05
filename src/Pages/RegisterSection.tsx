@@ -6,12 +6,11 @@ type RegisterSectionProps = {
     className?: string;
 }
 const RegisterSection = ({ className }: RegisterSectionProps) => {
-    
-  
+   
     return (
         <div className='register-section-container'>
             <div className="form-container">
-                <h1>CADASTRO</h1>
+                <p>CADASTRO</p>
                 <RegisterForm/>
 
             </div>

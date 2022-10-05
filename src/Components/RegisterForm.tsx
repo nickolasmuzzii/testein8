@@ -3,29 +3,63 @@ import { Field, Formik, FormikValues } from 'formik'
 import Grid from '@mui/material/Grid'
 import '../styles/ComponentStyles/RegisterForm.css'
 import Input from './Input';
+import apiClient from '../config/axiosConfig';
+import { toast } from 'react-toastify';
 type RegisterFormProps = {
     className?: string
     initialValues?: any
-    submitForm?: void
 }
 export const standarValues = {
-    "nome": 'nomeass',
+    "nome": '',
     "email": '',
     "nascimento": '',
     "telefone": '',
-    "teste": ''
 }
 const RegisterForm = ({
     className,
-    submitForm,
     initialValues
 
 }: RegisterFormProps) => {
+    const valuesToVerify = ['nome', 'email', 'nascimento']
+    const formatValues = (values:any) => {
+        for(var obj of valuesToVerify){
+            if(!values[obj] || values[obj] == ""){
+                toast.error(`O campo ${obj} é obrigatorio.`)
+                return false
+            }
+        }
+        return {
+            ...values,
+            telefone: values['telefone'].replace( /[^0-9a-z]/gi, "" )
+          };
+    }
+    const submitForm = (values:any) => {
+        const data = formatValues(values)
+        if(!data){
+            return
+        }
+        apiClient.post(`cadastro/cadastros/create_cadastro`, 
+        data)
+        .then((res) => {
+            toast.success("Cadastro concluído com sucesso")
+        })
+        .catch((err)=>{
+            if(err.response.data){
+                toast.error(err.response.data)
+            }
+            else{
+                toast.error("Não foi possível concluir o cadastro")
+                console.error(err)
+            }
+
+        })
+    }
+  
     return (
         <div className={className || "form-grid"}>
             <Formik
                 initialValues={standarValues}
-                onSubmit={(values: FormikValues) => console.log(values)}
+                onSubmit={(values: FormikValues) => submitForm(values)}
             >
                 {({ handleChange, values }) => (
                     <Grid container spacing={2} className="form-grid">
@@ -72,7 +106,7 @@ const RegisterForm = ({
                         </Grid>
                         <div className="btn-div">
                             <button
-                                onClick={() => console.log(values)}
+                                onClick={() => submitForm(values)}
                                 className="button-register"
                             >
                                 Cadastrar

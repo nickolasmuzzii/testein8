@@ -36,13 +36,26 @@
     width: 30%;
     height: 50px;
     background-color:#07243b;
-    color: #29aae3;
+    color: #29abe2;
     font-size: 30px;
     font-family: 'Roboto-Light';
     cursor: pointer;
+    border: none;
 }
 .button-register:hover{
     background-color:#051a2b;
+}
+@media(max-width: 425px){
+    .button-register{
+        margin-top: 20px;
+        width: 80%;
+        height: 50px;
+        background-color:#07243b;
+        color: #29abe2;
+        font-size: 30px;
+        font-family: 'Roboto-Light';
+        cursor: pointer;
+    }
 }
 
  

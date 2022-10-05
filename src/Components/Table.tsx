@@ -22,7 +22,7 @@ const Table = ({className, values}:TableProps) =>{
                 {values ? values.map((value:any, index:number) => {
                     return(
                     <tr>
-                        <td className="table-cell">{index}</td>
+                        <td className="table-cell">{index+1}</td>
                         <td className="table-cell">{value?.nome}</td>
                         <td className="table-cell">{value?.email}</td>
                         <td className="table-cell">{value?.nascimento}</td>
@@ -32,6 +32,7 @@ const Table = ({className, values}:TableProps) =>{
                 })
             :
             <tr>
+                <td>No Data</td>
                 <td>No Data</td>
                 <td>No Data</td>
                 <td>No Data</td>

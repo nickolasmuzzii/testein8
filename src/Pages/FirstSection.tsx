@@ -7,9 +7,11 @@ type FirstSectionProps = {
 const FirstSection = ({ className}:FirstSectionProps) =>{
     return(
         <div className="first-section-container">
+
             <div className="text-container">
-            <h1 className="title1">ESTÁGIO</h1>
-            <h1 className="title2">PROVA DE SELEÇÃO</h1>
+               
+            <p className="title1">ESTÁGIO </p>
+            <p className="title2">PROVA DE SELEÇÃO</p>
             </div>
 
         </div>

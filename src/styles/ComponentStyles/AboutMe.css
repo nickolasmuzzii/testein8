@@ -17,3 +17,9 @@
     background-position: center;
     position: static
 }
+@media(max-width:425px){
+  .about-me-container{
+    background-image: url('../../images/rodape-mobile.jpg');
+
+  }
+}
